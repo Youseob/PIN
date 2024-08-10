@@ -1,0 +1,36 @@
+# Prompt Inversion Clip Config
+defaults:
+  - base_pic
+  - _self_
+# Reward
+task_lm: ViT-H-14
+clip_pretrain: laion2b_s32b_b79k
+# style_classifier: "/root/rl-prompt-filter/examples/text-style-transfer/style_classifiers/yelp-bert-base-uncased-train/"
+# style_tokenizer: "bert-base-uncased"
+# lower_outputs: true
+# control_output_length: true
+# Single Prompt Model
+prompt_length: 8
+prompt_train_batch_size: 32 # 8
+prompt_infer_batch_size: 1
+# LM Adaptor Model
+logit_bias: false
+# QL Module
+reward_shaping_old_min: 0
+reward_shaping_old_max: 1
+reward_shaping_new_min: 0 #-20
+reward_shaping_new_max: 10 #
+top_k: 256
+# Trainer
+train_batch_size: 2
+max_train_steps: 20000
+train_shuffle: false
+eval_batch_size: 16
+eval_steps: 50
+save_steps: 1000
+learning_rate: 5e-5
+random_seed: null
+save_dir: output
+num_exp: 1000
+target_image_idx: -1
+dataset_name: "celeba"
