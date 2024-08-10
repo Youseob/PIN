@@ -1,4 +1,4 @@
-# Prompted Few-Shot Classification Example
+# Textual inversion from images
 
 The script below runs textual inversion from images experiment, with options for `dataset`. For each dataset, we provide 10 target images.
 
